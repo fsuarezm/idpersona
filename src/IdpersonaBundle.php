@@ -15,11 +15,11 @@ declare(strict_types=1);
 
 namespace FSM\Symfony\Idpersona;
 
-use Symfony\Component\HttpKernel\Bundle\Bundle;
+use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 
 /**
  * @final
  */
-class IdpersonaBundle extends Bundle
+class IdpersonaBundle extends AbstractBundle
 {
 }
