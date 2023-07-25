@@ -21,12 +21,12 @@ use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 
-final class PersonaIdValidator extends ConstraintValidator
+final class UniquePersonaIdValidator extends ConstraintValidator
 {
     public function validate(mixed $value, Constraint $constraint)
     {
-        if (! $constraint instanceof PersonaId) {
-            throw new UnexpectedTypeException($constraint, PersonaId::class);
+        if (! $constraint instanceof UniquePersonaId) {
+            throw new UnexpectedTypeException($constraint, UniquePersonaId::class);
         }
 
         if ($value === null || $value === '') {

@@ -13,7 +13,7 @@
 
 declare(strict_types=1);
 
-namespace FSM\Symfony\Idpersona\DBAL\Type;
+namespace FSM\Symfony\Idpersona\Doctrine\DBAL\Type;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\StringType;

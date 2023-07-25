@@ -1,4 +1,4 @@
 doctrine:
     dbal:
         types:
-            persona_id: FSM\Symfony\Idpersona\DBAL\Type\PersonaIdType
+            persona_id: FSM\Symfony\Idpersona\Doctrine\DBAL\Type\PersonaIdType
