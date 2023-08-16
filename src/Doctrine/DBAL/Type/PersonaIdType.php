@@ -27,7 +27,7 @@ final class PersonaIdType extends StringType
      *
      * @return string|null
      */
-    public function convertToDatabaseValue($value, AbstractPlatform $platform)
+    public function convertToDatabaseValue($value, AbstractPlatform $platform): ?string
     {
         if ($value === null) {
             return $value;
@@ -37,7 +37,7 @@ final class PersonaIdType extends StringType
         return (string) $value;
     }
 
-    public function convertToPHPValue($value, AbstractPlatform $platform)
+    public function convertToPHPValue($value, AbstractPlatform $platform): ?PersonaId
     {
         if ($value) {
             return new PersonaId($value);
@@ -46,12 +46,12 @@ final class PersonaIdType extends StringType
         return null;
     }
 
-    public function getName()
+    public function getName(): string
     {
         return 'persona_id';
     }
 
-    public function getSQLDeclaration(array $column, AbstractPlatform $platform)
+    public function getSQLDeclaration(array $column, AbstractPlatform $platform): string
     {
         $column['length'] = 16;
         $column['fixed'] = false;
@@ -59,7 +59,7 @@ final class PersonaIdType extends StringType
         return $platform->getStringTypeDeclarationSQL($column);
     }
 
-    public function requiresSQLCommentHint(AbstractPlatform $platform)
+    public function requiresSQLCommentHint(AbstractPlatform $platform): bool
     {
         return true;
     }

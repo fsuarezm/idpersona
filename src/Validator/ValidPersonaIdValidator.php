@@ -15,18 +15,18 @@ declare(strict_types=1);
 
 namespace FSM\Symfony\Idpersona\Validator;
 
-USE FSM\Symfony\Idpersona\PersonaId as IdPersona;
+use FSM\Symfony\Idpersona\PersonaId as IdPersona;
 use FSM\Symfony\Idpersona\Enum\Identity;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 
-final class UniquePersonaIdValidator extends ConstraintValidator
+final class ValidPersonaIdValidator extends ConstraintValidator
 {
-    public function validate(mixed $value, Constraint $constraint)
+    public function validate(mixed $value, Constraint $constraint): void
     {
-        if (! $constraint instanceof UniquePersonaId) {
-            throw new UnexpectedTypeException($constraint, UniquePersonaId::class);
+        if (! $constraint instanceof ValidPersonaId) {
+            throw new UnexpectedTypeException($constraint, ValidPersonaId::class);
         }
 
         if ($value === null || $value === '') {

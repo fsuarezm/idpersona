@@ -18,7 +18,7 @@ namespace FSM\Symfony\Idpersona\Validator;
 use Symfony\Component\Validator\Constraint;
 
 #[\Attribute]
-final class UniquePersonaId extends Constraint
+final class ValidPersonaId extends Constraint
 {
     public string $message = 'This value is not valid.';
 
