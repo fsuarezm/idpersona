@@ -15,6 +15,8 @@ declare(strict_types=1);
 
 namespace FSM\Symfony\Idpersona;
 
+use FSM\Symfony\Idpersona\DependencyInjection\CompilerPass\RegisterPersonaIdTypePass;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 
 /**
@@ -22,4 +24,10 @@ use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
  */
 class IdpersonaBundle extends AbstractBundle
 {
+    public function build(ContainerBuilder $container): void
+    {
+        parent::build($container);
+
+        $container->addCompilerPass(new RegisterPersonaIdTypePass());
+    }
 }
